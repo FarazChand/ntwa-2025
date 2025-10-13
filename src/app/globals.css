@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+/* -------------------------------
+   Define global color system using Tailwind theme()
+   Automatically switches based on prefers-color-scheme
+--------------------------------*/
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: theme(colors.white);
+    --foreground: theme(colors.gray.900);
+    --primary: theme(colors.blue.600);
+    --secondary: theme(colors.gray.600);
+    --accent: theme(colors.blue.100);
+    --danger: theme(colors.red.600);
+    --success: theme(colors.green.500);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: theme(colors.gray.900);
+      --foreground: theme(colors.gray.100);
+      --primary: theme(colors.blue.400);
+      --secondary: theme(colors.gray.400);
+      --accent: theme(colors.gray.800);
+      --danger: theme(colors.red.500);
+      --success: theme(colors.green.400);
+    }
+  }
+
+  body {
+    color: var(--foreground);
+    background-color: var(--background);
+    font-family: system-ui, sans-serif;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* -------------------------------
+   🧩 Custom Utility Classes
+   Connects CSS variables to class names.
+--------------------------------*/
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Text colors */
+  .color-primary {
+    color: var(--primary);
+  }
+  .color-secondary {
+    color: var(--secondary);
+  }
+  .color-accent {
+    color: var(--accent);
+  }
+  .color-danger {
+    color: var(--danger);
+  }
+  .color-success {
+    color: var(--success);
+  }
+  .color-foreground {
+    color: var(--foreground);
+  }
+
+  /* Background colors */
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  .bg-accent {
+    background-color: var(--accent);
+  }
+  .bg-danger {
+    background-color: var(--danger);
+  }
+  .bg-success {
+    background-color: var(--success);
+  }
+  .bg-background {
+    background-color: var(--background);
   }
 }

@@ -8,7 +8,7 @@ export default function Home() {
   const { data: session, status } = useSession();
 
   return (
-    <main>
+    <main className="color-background">
       {/* Conditionally rendered welcome message */}
       {status === "loading" ? (
         <p>Loading session...</p>
