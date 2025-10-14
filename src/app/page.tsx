@@ -14,27 +14,26 @@ export default function Home() {
         <p>Loading session...</p>
       ) : session ? (
         <>
-          <h1 className="text-lg text-primary">
+          <h1 className="color-primary text-lg">
             Welcome back, {session.user?.email}!
           </h1>
           <SignOutButton />
         </>
       ) : (
         <>
-          <h1 className="text-lg text-secondary">Welcome, guest!</h1>
+          <h1 className="color-secondary text-lg">Welcome, guest!</h1>
           <SignInButton />
         </>
       )}
 
-      <h1 className="flex text-lg text-primary">Hello world!</h1>
-      <h1 className="flex text-lg text-secondary">Hello world!</h1>
-      <h1 className="text-lg text-accent">Hello world!</h1>
-      <h1 className="text-lg text-background">Hello world!</h1>
-      <h1 className="text-lg text-foreground">Hello world!</h1>
-      <h1 className="text-lg text-muted">Hello world!</h1>
-      <h1 className="text-lg text-border">Hello world!</h1>
-      <h1 className="text-lg text-input">Hello world!</h1>
-      <h1 className="text-lg text-danger">Hello world!</h1>
+      <h1 className="color-primary flex text-lg">Hello world!</h1>
+      <h1 className="color-secondary flex text-lg">Hello world!</h1>
+      <h1 className="color-accent text-lg">Hello world!</h1>
+      <h1 className="bg-primary text-lg">Hello world!</h1>
+      <h1 className="bg-secondary text-lg">Hello world!</h1>
+      <h1 className="bg-accent text-lg">Hello world!</h1>
+      <h1 className="color-success text-lg">Hello world!</h1>
+      <h1 className="color-danger text-lg">Hello world!</h1>
     </main>
   );
 }
