@@ -62,7 +62,7 @@ export default function SignupPage() {
   }
 
   return (
-    <form onSubmit={handleSignup} className="space-y-4">
+    <form onSubmit={handleSignup} className="color-accent space-y-4">
       {error && <p className="text-red-500">{error}</p>}
       <input
         value={email}
